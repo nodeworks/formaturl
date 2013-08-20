@@ -1,0 +1,34 @@
+{
+    "name": "formatUrl",
+    "title": "jQuery Format URL",
+    "description": "jQuery Format URL plugin. adds http:// in a textfield without interfering.",
+    "keywords": [
+        "URL",
+        "http",
+		"formatting"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Rob Lee",
+        "url": "http://www.spartansystems.co"
+    },
+    "maintainers": [
+        {
+            "name": "Rob Lee",
+            "email": "rob@spartansystems.co",
+            "url": "http://www.spartansystems.co"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "GPLv3",
+            "url": "https://github.com/nodeworks/formaturl/blob/master/LICENSE"
+        }
+    ],
+    "bugs": "https://github.com/nodeworks/formaturl/issues",
+    "homepage": "https://github.com/nodeworks/formaturl",
+    "docs": "https://github.com/nodeworks/formaturl",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
