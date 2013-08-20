@@ -5,21 +5,14 @@
  * http://www.gnu.org/licenses/lgpl.html
  */
 ;(function ($) {
-  $.fn.formatUrl = function() {
-    return $(this).live('focus', function () {
+  $.fn.formatUrl = function() {	
+    return $(this).live('focus', function () {		
       if ($(this).val().indexOf('http://') != 0) {
-        var val = $(this).val();
-        $(this).val('http://' + val);
+        $(this).val('http://' + $(this).val());
       }
     }).live('blur', function () {
-      if ($(this).val().indexOf('http://') != 0) {
-        if ($(this).val() == '') {
-          $(this).val('');
-        }
-        else {
-          var val = $(this).val();
-          $(this).val('http://' + val);
-        }
+      if ($(this).val().indexOf('http://') != 0 && $(this).val() != '') {
+          $(this).val('http://' + $(this).val());
       }
       else {
         if ($(this).val() == 'http://') {
