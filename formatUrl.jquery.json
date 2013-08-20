@@ -1,13 +1,13 @@
 {
     "name": "formatUrl",
     "title": "jQuery Format URL",
-    "description": "jQuery Format URL plugin. adds http:// in a textfield without interfering. This is a simple plugin that makes it so when you click within an empty field, it automatically prefixes it with http://. When you click out of the field, if the field value does not contain http:// it will add it. TODO: Add support for https://, also make a passable parameter to make http:// visible at all times.",
+    "description": "jQuery Format URL plugin. adds a protocol/prefix such as http:// in a textfield without interfering with what the user is typing. This is a simple plugin that makes it so when you click within an empty field, it automatically prefixes it with the protocol you choose or defaults to http://. When you click out of the field, if the field value does not contain your protocol or the default http:// it will add it. Example Usage: $('#selector').formatUrl({protocol: 'https://', alwaysShow: true});",
     "keywords": [
         "URL",
         "http",
-		"formatting"
+        "formatting"
     ],
-    "version": "1.0.2",
+    "version": "1.0.5",
     "author": {
         "name": "Rob Lee",
         "url": "http://www.spartansystems.co"
@@ -29,6 +29,6 @@
     "homepage": "https://github.com/nodeworks/formaturl",
     "docs": "https://github.com/nodeworks/formaturl",
     "dependencies": {
-        "jquery": ">=1.5"
+        "jquery": ">=1.3"
     }
 }
