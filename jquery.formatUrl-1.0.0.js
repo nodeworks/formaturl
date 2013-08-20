@@ -6,14 +6,12 @@
  */
 ;(function ($) {
   $.fn.formatUrl = function() {
-    $(this).live('focus', function () {
+    return $(this).live('focus', function () {
       if ($(this).val().indexOf('http://') != 0) {
         var val = $(this).val();
         $(this).val('http://' + val);
       }
-    });
-
-    $(this).live('blur', function () {
+    }).live('blur', function () {
       if ($(this).val().indexOf('http://') != 0) {
         if ($(this).val() == '') {
           $(this).val('');
@@ -29,7 +27,5 @@
         }
       }
     });
-
-    return this;
   };
 })(jQuery);
