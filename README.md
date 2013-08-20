@@ -1,4 +1,4 @@
-formaturl
+jQuery Format URL
 =========
 
 jQuery Format URL plugin. adds http:// in a textfield without interfering. This is a simple plugin that makes it so when you click within an empty field, it automatically prefixes it with http://. When you click out of the field, if the field value does not contain http:// it will add it.
