@@ -1,3 +1,13 @@
+/*!
+ * jQuery Format URL Test Suite
+ * https://github.com/invetek/formaturl
+ * 
+ * Copyright 2013 Loran Kloeze - Invetek
+ * Released under the LGPL Version 3 license.
+ * 
+ * Plugin is forked from Rob Lee <http://www.spartansystems.co>
+ */
+
 /*
  *  Standard jQuery plugin tests
  * 
@@ -81,6 +91,56 @@ test("setting protocol via options", function(){
 
 })
 
+test("setting alwaysShow via options", function(){
+	expect(1);
+	
+	var $input = createInputFixture();
+    activatePlugin({
+		'alwaysShow': true
+	});	
+	
+	$input.focus();
+	$input.val('');	
+	$input.blur();
+	equal($input.val(), 'http://', 'Input should contain https://');
+	
+
+})
+
+test("setting protocol and alwaysShow via options", function(){
+	expect(1);
+	
+	var $input = createInputFixture();
+    activatePlugin({
+		'alwaysShow': true,
+		'protocol': 'https://'
+	});	
+	
+	$input.focus();
+	$input.val('');	
+	$input.blur();
+	equal($input.val(), 'https://', 'Input should contain http://');
+	
+
+})
+
+test("add input after activating plugin", function(){
+	expect(1);
+	
+    activatePlugin({
+		'alwaysShow': true,
+		'protocol': 'https://'
+	});	
+	
+	var $input = createInputFixture();
+	$input.focus();
+	$input.val('www.github.com');	
+	$input.blur();
+	equal($input.val(), 'https://www.github.com', 'Input should contain https://www.github.com');
+	
+
+})
+
 function createInputFixture(){
 	var $input = $('<input>');
 	$('#qunit-fixture').append($input);	
@@ -89,7 +149,7 @@ function createInputFixture(){
 
 
 function activatePlugin(options){	
-	$('#qunit-fixture input').die(); // Remove previously attached live event handlers
+	$('#qunit-fixture input').die();
 	$('#qunit-fixture input').formatUrl(options);
 }
 
