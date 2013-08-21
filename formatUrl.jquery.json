@@ -17,6 +17,11 @@
             "name": "Rob Lee",
             "email": "rob@spartansystems.co",
             "url": "http://www.spartansystems.co"
+        },
+		{
+            "name": "Loran Kloeze | Invetek",
+            "email": "loran@invetek.nl",
+            "url": "http://www.invetek.nl"
         }
     ],
     "licenses": [
