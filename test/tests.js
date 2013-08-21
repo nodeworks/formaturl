@@ -1,5 +1,3 @@
-
-
 /*
  *  Standard jQuery plugin tests
  * 
@@ -32,7 +30,7 @@ test("trigger blur after focus on empty input", function(){
     expect(1);
 	
 	var $input = createInputFixture();
-	activatePlugin();	
+    activatePlugin()	
 	
 	$input.focus();	
 	$input.blur();
@@ -44,7 +42,7 @@ test("trigger blur after entering www-address in input", function(){
     expect(1);
 	
 	var $input = createInputFixture();
-	activatePlugin();	
+    activatePlugin()
 	
 	$input.focus();
 	$input.val('www.github.com');	
@@ -57,7 +55,7 @@ test("trigger blur after entering http:// + www-address in input", function(){
     expect(1);
 	
 	var $input = createInputFixture();
-	activatePlugin();	
+    activatePlugin()
 	
 	$input.focus();
 	$input.val('http://www.github.com');	
@@ -66,13 +64,32 @@ test("trigger blur after entering http:// + www-address in input", function(){
 
 });
 
+
+test("setting protocol via options", function(){
+	expect(1);
+	
+	var $input = createInputFixture();
+    activatePlugin({
+		'protocol': 'https://'
+	});	
+	
+	$input.focus();
+	$input.val('www.github.com');	
+	$input.blur();
+	equal($input.val(), 'https://www.github.com', 'Input should contain https:// + entered address');
+	
+
+})
+
 function createInputFixture(){
-	var $input = $('<input>');	
+	var $input = $('<input>');
 	$('#qunit-fixture').append($input);	
 	return $input;
 }
 
-function activatePlugin(){
-	$('#qunit-fixture input').formatUrl();
+
+function activatePlugin(options){	
+	$('#qunit-fixture input').die(); // Remove previously attached live event handlers
+	$('#qunit-fixture input').formatUrl(options);
 }
 

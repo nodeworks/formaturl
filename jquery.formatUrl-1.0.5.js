@@ -8,7 +8,7 @@
   $.fn.formatUrl = function(options) {
 
     // Set default settings.
-    var settings = $.extend({
+    var settings = $.extend({},{
       protocol: 'http://',
       alwaysShow: false
     }, options);
