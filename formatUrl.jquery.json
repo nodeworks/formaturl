@@ -17,6 +17,11 @@
             "name": "Rob Lee",
             "email": "rob@spartansystems.co",
             "url": "http://www.spartansystems.co"
+        },
+		{
+            "name": "Loran Kloeze | Invetek",
+            "email": "loran@invetek.nl",
+            "url": "http://www.invetek.nl"
         }
     ],
     "licenses": [
@@ -29,6 +34,6 @@
     "homepage": "https://github.com/nodeworks/formaturl",
     "docs": "https://github.com/nodeworks/formaturl",
     "dependencies": {
-        "jquery": ">=1.3"
+        "jquery": ">=1.3 <1.9"
     }
 }
